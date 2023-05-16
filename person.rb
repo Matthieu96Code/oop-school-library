@@ -1,5 +1,5 @@
 class Person
-  
+
   attr_reader :id
   attr_accessor :name, :age 
   
@@ -8,4 +8,15 @@ class Person
     @name = name
     @parent_permission = parent_permission
   end
+
+  def of_age?
+    if @age >= 18
+      true
+    else
+      false
+    end
+  end
+
+  private :of_age?
+
 end
