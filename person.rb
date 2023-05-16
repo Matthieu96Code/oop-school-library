@@ -19,4 +19,11 @@ class Person
 
   private :of_age?
 
+  def can_use_sevice?
+    if @of_age? == true || parent_permission ==true
+      true
+    end
+  end
+
+  public :can_use_sevice?
 end
