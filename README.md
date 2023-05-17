@@ -43,6 +43,7 @@
 - **Class person**
 - **Class student**
 - **Class teacher**
+- **Use the "Decorator" design pattern**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
