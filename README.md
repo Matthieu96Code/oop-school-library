@@ -40,10 +40,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Class person**
-- **Class student**
-- **Class teacher**
+- **Class person, student, teacher**
 - **Use the "Decorator" design pattern**
+- **Set up associations**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
