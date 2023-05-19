@@ -1,3 +1,9 @@
+require './person'
+require './student'
+require './teacher'
+require './classroom'
+require './book'
+
 class App
   def initialize
     @books = []
@@ -59,6 +65,17 @@ class App
     else
       puts 'Invalid input'
     end
+  end 
 
-  end  
+  def create_book
+    print 'Title: '
+    title = gets.chomp
+
+    print 'Author: '
+    author = gets.chomp
+
+    @books << Book.new(title, author)
+    puts 'Book created successfully'
+  end
+
 end
