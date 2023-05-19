@@ -35,36 +35,41 @@ class App
     person_choice = gets.chomp
 
     if person_choice == '1'
-      print 'Name:'
-      name = gets.chomp
-
-      print 'Age:'
-      age = gets.chomp.to_i
-
-      print 'Has Parent permission? [Y/N]:'
-      parent_permission = gets.chomp.downcase
-
-      student = Student.new(@classroom, age, name, parent_permission: parent_permission == 'y')
-      @people << student
-      puts 'Student created successfully'
-
+      create_student
     elsif person_choice == '2'
-
-      print 'Name:'
-      name = gets.chomp
-
-      print 'Age:'
-      age = gets.chomp.to_i
-
-      print 'Specialization:'
-      specialization = gets.chomp
-
-      @people << Teacher.new(age, specialization, name)
-      puts 'Teacher created successfully'
-
+      create_teacher
     else
       puts 'Invalid input'
     end
+  end
+
+  def create_student
+    print 'Name:'
+    name = gets.chomp
+
+    print 'Age:'
+    age = gets.chomp.to_i
+
+    print 'Has Parent permission? [Y/N]:'
+    parent_permission = gets.chomp.downcase
+
+    student = Student.new(@classroom, age, name, parent_permission: parent_permission == 'y')
+    @people << student
+    puts 'Student created successfully'
+  end
+
+  def create_teacher
+    print 'Name:'
+    name = gets.chomp
+
+    print 'Age:'
+    age = gets.chomp.to_i
+
+    print 'Specialization:'
+    specialization = gets.chomp
+
+    @people << Teacher.new(age, specialization, name)
+    puts 'Teacher created successfully'
   end
 
   def create_book
@@ -77,5 +82,4 @@ class App
     @books << Book.new(title, author)
     puts 'Book created successfully'
   end
-
 end
