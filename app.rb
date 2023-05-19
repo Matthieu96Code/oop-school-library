@@ -28,7 +28,6 @@ class App
       puts 'there is none registered'
     else
       @people.each do |person|
-        puts person
         puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
     end
@@ -116,7 +115,7 @@ class App
 
     puts 'Rentals:'
     rentals.each do |rental|
-      puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
+      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
     end
   end
 end
