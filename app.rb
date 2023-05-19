@@ -10,7 +10,7 @@ class App
     @books = []
     @people = []
     @rentals = []
-    @classroom = Classroom.new('')
+    @classroom = Classroom.new('College')
   end
 
   def list_all_books
@@ -28,13 +28,14 @@ class App
       puts 'there is none registered'
     else
       @people.each do |person|
+        puts person
         puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
     end
   end
 
   def create_person
-    puts 'Do you want to create a student (1) or a teacher(2)?....'
+    print 'Do you want to create a student (1) or a teacher(2)? [Input the number]: '
     person_choice = gets.chomp
 
     if person_choice == '1'
@@ -47,31 +48,32 @@ class App
   end
 
   def create_student
-    print 'Name:'
-    name = gets.chomp
-
-    print 'Age:'
+    print 'Age: '
     age = gets.chomp.to_i
 
-    print 'Has Parent permission? [Y/N]:'
-    parent_permission = gets.chomp.downcase
+    print 'Name: '
+    name = gets.chomp
 
-    student = Student.new(@classroom, age, name, parent_permission: parent_permission == 'y')
+    print 'Has Parent permission? [Y/N]: '
+    parent_permission = gets.chomp.downcase
+    parent_permission = parent_permission == 'y'
+
+    student = Student.new(name, @classroom, age,parent_permission: parent_permission)
     @people << student
     puts 'Student created successfully'
   end
 
   def create_teacher
-    print 'Name:'
-    name = gets.chomp
-
-    print 'Age:'
+    print 'Age: '
     age = gets.chomp.to_i
 
-    print 'Specialization:'
+    print 'Name: '
+    name = gets.chomp
+
+    print 'Specialization: '
     specialization = gets.chomp
 
-    @people << Teacher.new(age, specialization, name)
+    @people << Teacher.new(name, specialization, age)
     puts 'Teacher created successfully'
   end
 
