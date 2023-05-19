@@ -57,7 +57,7 @@ class App
     parent_permission = gets.chomp.downcase
     parent_permission = parent_permission == 'y'
 
-    student = Student.new(name, @classroom, age,parent_permission: parent_permission)
+    student = Student.new(name, @classroom, age, parent_permission: parent_permission)
     @people << student
     puts 'Student created successfully'
   end
