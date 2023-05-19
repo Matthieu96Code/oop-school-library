@@ -15,21 +15,23 @@ def show_menu
 end
 
 def select_option(selected)
-  if selected == '1'
+  case selected
+  when '1'
     app.list_all_books
-  elsif selected == '2'
+  when '2'
     app.list_all_people
-  elsif selected == '3'
+  when '3'
     app.create_person
-  elsif selected == '4'
+  when '4'
     app.create_book
-  elsif selected == '5'
+  when '5'
     app.create_rental
-  elsif selected == '6'
+  when '6'
     app.list_all_rentals
-  elsif selected == '7'
+  when '7'
     puts 'thank you for using this app!'
-    return
+  else
+    puts 'Invalid input'
   end
 end
 
