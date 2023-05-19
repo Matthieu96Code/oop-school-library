@@ -14,7 +14,7 @@ def show_menu
   puts '7 - Exit'
 end
 
-def select_option(selected)
+def select_option(selected, app)
   case selected
   when '1'
     app.list_all_books
@@ -28,8 +28,6 @@ def select_option(selected)
     app.create_rental
   when '6'
     app.list_all_rentals
-  when '7'
-    puts 'thank you for using this app!'
   else
     puts 'Invalid input'
   end
@@ -41,7 +39,11 @@ def main
   loop do
     show_menu
     selected = gets.chomp
-    select_option(selected)
+    if selected == '7'
+      puts 'thank you for using this app!'
+      return
+    end
+    select_option(selected, app)
   end
 end
 

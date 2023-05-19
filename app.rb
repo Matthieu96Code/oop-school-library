@@ -60,6 +60,7 @@ class App
     student = Student.new(name, @classroom, age, parent_permission: parent_permission)
     @people << student
     puts 'Student created successfully'
+    p @people
   end
 
   def create_teacher
