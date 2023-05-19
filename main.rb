@@ -6,6 +6,7 @@ def main
   app = App.new
   puts 'Welcome to School Library App!'
   loop do
+
     puts ''
     puts 'Please choose an option by entering a number:'
     puts '1 - List all books'
