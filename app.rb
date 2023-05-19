@@ -11,22 +11,22 @@ class App
   end
 
   def list_all_books
-    if !@books.empty?
+    if @books.empty?
+      puts 'books store empty'
+    else
       @books.each do |book|
         puts "Title: #{book.title}, Author: #{book.author}"
       end
-    else
-      puts 'books store empty'
     end
   end
 
   def list_all_people
-    if !@people.empty?
+    if @people.empty?
+      puts 'there is none registered'
+    else
       @people.each do |book|
         puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
-    else
-      puts 'there is none registered'
     end
   end
 
@@ -65,7 +65,7 @@ class App
     else
       puts 'Invalid input'
     end
-  end 
+  end
 
   def create_book
     print 'Title: '
