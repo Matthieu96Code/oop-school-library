@@ -15,6 +15,25 @@ def main
   puts '5 - Create a rental'
   puts '6 - List all rentals for a given person id'
   puts '7 - Exit'
+
+  selected = gets.chomp
+
+  if selected == '1'
+    app.list_all_books
+  elsif selected == '2'
+    app.list_all_people
+  elsif selected == '3'
+    app.create_person
+  elsif selected == '4'
+    app.create_book
+  elsif selected == '5'
+    app.create_rental
+  elsif selected == '6'
+    app.list_all_rentals
+  elsif selected == '7'
+    puts 'thank you for using this app!'
+    return
+  end
 end
 
 main
