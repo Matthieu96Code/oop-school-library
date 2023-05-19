@@ -10,7 +10,7 @@ class App
         puts "Title: #{book.title}, Author: #{book.author}"
       end
     else
-      puts books store empty
+      puts 'books store empty'
     end
   end
 
@@ -20,7 +20,45 @@ class App
         puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
     else
-      puts there is none registered
+      puts 'there is none registered'
     end
   end
+
+  def create_person
+    puts 'Do you want to create a student (1) or a teacher(2)?....'
+    person_choice = gets.chomp
+
+    if person_choice ===  '1'
+      print 'Name:'
+      name = gets.chomp
+  
+      print 'Age:'
+      age = gets.chomp.to_i
+  
+      print 'Has Parent permission? [Y/N]:'
+      parent_permission = gets.chomp.downcase
+  
+      student = Student.new(@classroom, age, name, parent_permission: parent_permission == 'y')
+      @people << student
+      puts 'Student created successfully'
+
+    elsif person_choice ===  '2'
+
+      print 'Name:'
+      name = gets.chomp
+  
+      print 'Age:'
+      age = gets.chomp.to_i
+  
+      print 'Specialization:'
+      specialization = gets.chomp
+  
+      @people << Teacher.new(age, specialization, name)
+      puts 'Teacher created successfully'
+
+    else
+      puts 'Invalid input'
+    end
+
+  end  
 end
