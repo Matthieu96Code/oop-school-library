@@ -43,6 +43,7 @@
 - **Class person, student, teacher**
 - **Use the "Decorator" design pattern**
 - **Set up associations**
+- **add basic UI**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -102,7 +103,7 @@ Install this project with:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **add basic UI**
+- [ ] **refactor the code**
 - [ ] **preserve data**
 - [ ] **unit tests**
 
